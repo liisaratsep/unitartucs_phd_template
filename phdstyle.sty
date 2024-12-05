@@ -1,6 +1,6 @@
 \NeedsTeXFormat{LaTeX2e}
 
-\ProvidesPackage{phdstyle}[2021/01/14 v1.3]
+\ProvidesPackage{phdstyle}[2024/12/03 v1.4]
 
 %%% PACKAGES
 
@@ -51,15 +51,25 @@
 
 %% Organising tools
 \RequirePackage{color}
-% \RequirePackage{cite}
 
 %% Bibliography
-\usepackage[backend=biber,
-            style=alphabetic, % possible options: numeric, alphabetic, for more options refer to https://www.overleaf.com/learn/latex/biblatex_citation_styles
-            defernumbers=true, % necessary for the roman numerals on the list of publications
-            refsection=section]
-            {biblatex}
-            
+\usepackage[
+    backend=biber,
+    % Citation style and style-specific options. For more options refer to https://www.overleaf.com/learn/latex/biblatex_citation_styles
+    % Uncomment your preferred used option:
+    style=authoryear, maxnames=2, dashed=false,
+    %style=numeric,
+    %style=alphabetic,
+    % Universal options for all styles:
+    defernumbers=true, % necessary for the roman numerals on the list of publications
+    maxbibnames=30, % maximum number of author names listed in bibliography
+    natbib=true, % enambles natbib-style cite commands such as \citep and \citet
+    refsegment=section,
+]
+{biblatex}
+
+
+
 % Roman numerals for the list of the publications: https://tex.stackexchange.com/questions/299064/biblatex-two-bibliographies-with-different-styles-and-sortings
 \DeclareFieldFormat{Roman}{\RN{#1}}
 % The following definition is copied from numeric.bbx
@@ -77,12 +87,12 @@
       \renewcommand*{\makelabel}[1]{\hss##1}}
   {\endlist}
   {\item}
-  
-  
+
+
 % == drawing black boxes with numbers before publications ==
 \usepackage{tikz, blindtext}
 
-%% enumerating 
+%% enumerating
 % \usepackage{enumerate}
 \usepackage{pdfpages}
 
@@ -92,7 +102,7 @@
   linkcolor=black,citecolor=black,filecolor=black,urlcolor=black,
   pdfhighlight=/O,pdfstartview=FitH,unicode]{hyperref}
 
-%% USER-DEFINED MACROS 
+%% USER-DEFINED MACROS
 
 %% Operators
 \newcommand{\diff}{\mathop{}\!\mathrm{d}}
@@ -130,31 +140,6 @@
 \newcommand{\0}{\mathbf{0}}
 \newcommand{\1}{\mathbf{1}}
 
-
-%% Glossaries
-\RequirePackage{longtable}
-\RequirePackage[acronym]{glossaries}
-
-% abbreviations:
-\newacronym{ny}{NY}{New York}
-\newacronym{la}{LA}{Los Angeles}
-\newacronym{un}{UN}{United Nations}
-
-% nomenclature:
-\newglossaryentry{angelsperarea}{
-  name = $a$ ,
-  description = The number of angels per unit area,
-}
-\newglossaryentry{numofangels}{
-  name = $N$ ,
-  description = The number of angels per needle point
-}
-\newglossaryentry{areaofneedle}{
-  name = $A$ ,
-  description = The area of the needle point
-}
-
-\makeglossaries
 
 %% Miscellaneous
 \renewcommand{\qedsymbol}{\(\blacksquare\)}

@@ -2,16 +2,17 @@
 % with some modifications by the Institute of Computer Science of UT  
 % following the guidelines of UT Press.
 % 
-% Last modified: 2021/01/14 v1.3
+% Last modified: 2024/12/03 v1.4
 % See full list of authors in README.md
-% 
+%
 % Contact: ics@ut.ee
 
 \documentclass{phdunitartu}
 \usepackage{phdstyle}
+\usepackage{glossary}
 
 %
-\ThesisType{COLLECTION} % Possible values: MONOGRAPH, COLLECTION             
+\ThesisType{COLLECTION} % Possible values: MONOGRAPH, COLLECTION
 %
 \author{Firstname Lastname}
 \title{Dissertation Title}
@@ -19,7 +20,7 @@
 %
 \institute{Institute of Computer Science} % Replace with your institute/college
 \faculty{Faculty of Science and Technology} % Replace with your Faculty
-\affiliation{University of Tartu} 
+\affiliation{University of Tartu}
 
 %
 \ISSN{1024-4212}           % will be provided by UT Press
@@ -55,7 +56,7 @@
 }
 
 %
-\addbibresource{bibliographies/publications.bib} % your publication
+\addbibresource{bibliographies/publications.bib} % your publications
 \addbibresource{bibliographies/bibliography.bib} % any other references
 % why to use bibtex instead of manually listing the entries? check here: https://web.iit.edu/sites/web/files/departments/academic-affairs/graduate-academic-affairs/pdfs/biblio-help2.pdf
 
@@ -76,8 +77,8 @@
     sections/acknowledge,
     sections/sisukokkuvote,
     sections/publications,
-    sections/cv,
-    sections/elulookirjeldus,
+    sections/cv_eng,
+    sections/cv_est,
     sections/chapterpublications, % only for a monograph
 }
 
@@ -98,34 +99,32 @@
     %
     \include{sections/preface}
     \include{sections/introduction}
-    
+
     % body
     \include{sections/chapterI}
     \include{sections/chapterII}
-    
+
     % conclusion
     \include{sections/conclusion}
-    
+
     % bibliography
-    % \nocite{*} % NB: remove this, fill in the bibliography.bib and use \cite in your text in order for your citations to show up in this section
     % you can change the bibliography style from the phdstyle.sty file, bibliography section
-    \nocite{*}
+    % \nocite{*} % by adding this line, also references not cited in text will be shown in the biblography list. This can be useful while editing, but shouldn't be used in the final version.
     \printbibliography
-    % \bibliography{bibliography.bib}
 
     %
     \appendix
     \include{sections/appendixA}
     \include{sections/appendixB}
-    
+
     %
     \setcounter{secnumdepth}{-1}
     \include{sections/acknowledge}
     \include{sections/sisukokkuvote} % summary in Estonian
     \IfThesisTypeIsCollection{\include{sections/publications}}{}
-    
+
     % curriculum vitae
-    \include{sections/cv} % English
-    \include{sections/elulookirjeldus} % Estonian
+    \include{sections/cv_eng} % English
+    \include{sections/cv_est} % Estonian
     \IfThesisTypeIsCollection{}{\include{sections/chapterpublications}}
 \end{document}

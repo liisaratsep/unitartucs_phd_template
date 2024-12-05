@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file.
 
+## Dec 2024 - Liisa Rätsep
+
+- Fixed compilation errors regarding bibliography and reference handling, added the author-year citation option.
+- Separated `glossary.sty` from `phdstyle.sty` for more convenient glossary editing
+- Updated the sample content to include more usage examples and information about the thesis format. Moved a lot of the information from the readme to the template as Overleaf displays markdown files as plain text.
+- Minor typo and other fixes.
+- Automatically add empty pages before publication PDFs when needed depending on whether the current page number is odd or even.
+
+
 ## Jan 2021 - Novin Shahroudi
 
 - improved the functionality of the ati phd template by introducing sets of commands, organizing the latex codes better and restructuring the directories.

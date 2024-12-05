@@ -1,13 +1,21 @@
+\ifodd\value{page}\else\newpage\null\thispagestyle{empty}\fi
+
 \chapter{Publications}
 \thispagestyle{empty}
 
-\vfill\newpage\null\newpage
+
+\newpage\null\thispagestyle{empty}
+
+% Publication I
+
+\ifodd\value{page}\else\newpage\thispagestyle{empty}\fi
 \marginpar{
 \begin{tikzpicture}
       \draw[fill,color=black] (0,0) rectangle (4cm,2cm);
       \draw[color=white] (1cm,1cm) node {\normalfont\huge\bfseries I};
 \end{tikzpicture}
-} 
+}
+\newpage
 
 \phantomsection\addcontentsline{toc}{section}{First article title}
 \thispagestyle{empty}\null\vfill
@@ -21,15 +29,17 @@ The article is reprinted with permission of the copyright owner.
 
 \includepdf[pages=-]{publications/icprs-template-article.pdf}
 
-\newpage
+\newpage\null\thispagestyle{empty}
 
-\vfill\newpage\null\newpage
+% Publication II
+
+\ifodd\value{page}\else\newpage\thispagestyle{empty}\fi
 \marginpar{
 \begin{tikzpicture}
       \draw[fill,color=black] (0,0) rectangle (4cm,2cm);
       \draw[color=white] (1cm,1cm) node {\normalfont\huge\bfseries II};
 \end{tikzpicture}
-} 
+}
 \newpage
 
 \phantomsection\addcontentsline{toc}{section}{Second article title}
@@ -44,4 +54,4 @@ The article is reprinted with permission of the copyright owner.
 
 \includepdf[pages=-]{publications/ltxcrib.pdf}
 
-\newpage
+\newpage\null\thispagestyle{empty}
