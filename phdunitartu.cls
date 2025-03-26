@@ -1,5 +1,5 @@
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{phdunitartu}[2024/12/03 v1.4]
+\ProvidesClass{phdunitartu}[2025/03/26 v1.5]
 
 \DeclareOption*{\PassOptionsToClass{\CurrentOption}{report}}
 \ProcessOptions

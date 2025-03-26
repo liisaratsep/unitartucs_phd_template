@@ -19,7 +19,7 @@ and with some modifications by the Institute of Computer Science of UT following
 - Jaak Vilo -- vilo@ut.ee
 - Institute -- ics@ut.ee
 
-**Last modified**: 2021/12/03 v1.4
+**Last modified**: 2025/03/26 v1.5
 
 Changes to the template are documented in the `changelog.md` file.
 
