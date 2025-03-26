@@ -1,6 +1,6 @@
 # UniTartu Doctoral Thesis Template Package
 
-[<img alt="University of Tartu" src="figures/tartu_ylikool_logo-e1589353961210.png" width="500"/>](https://ut.ee)
+[<img alt="University of Tartu" src="assets/figures/tartu_ylikool_logo-e1589353961210.png" width="500"/>](https://ut.ee)
 
 The package contains template files for PhD students writing their doctoral thesis. Documentation and examples of using
 the template can be found in the sample chapters included.

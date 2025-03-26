@@ -2,6 +2,9 @@
 
 All notable changes to this project will be documented in this file.
 
+## March 2024 - Liisa Rätsep
+- Light restructuring to order main content chapters and separate them from non-content chapters for easier writing. Added background chapter.
+
 ## Dec 2024 - Liisa Rätsep
 
 - Fixed compilation errors regarding bibliography and reference handling, added the author-year citation option.

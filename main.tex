@@ -9,7 +9,7 @@
 
 \documentclass{phdunitartu}
 \usepackage{phdstyle}
-\usepackage{glossary}
+\usepackage{assets/glossary}
 
 %
 \ThesisType{COLLECTION} % Possible values: MONOGRAPH, COLLECTION
@@ -63,49 +63,53 @@
 % to remove a chapter you can easily comment out from the following list
 \includeonly
 {
-    sections/dedication,
-    sections/abstract,
-    sections/listofpublications,
-    sections/abbreviations,
-    sections/preface,
-    sections/introduction,
-    sections/chapterI,
-    sections/chapterII,
-    sections/conclusion,
-    sections/appendixA,
-    sections/appendixB,
-    sections/acknowledge,
-    sections/sisukokkuvote,
-    sections/publications,
-    sections/cv_eng,
-    sections/cv_est,
-    sections/chapterpublications, % only for a monograph
+    extras/dedication,
+    sections/0-1_abstract,
+    extras/listofpublications,
+    extras/abbreviations,
+    sections/0-2_preface,
+    sections/1_introduction,
+    sections/2_background,
+    sections/3-1_chapterI,
+    sections/3-2_chapterII,
+    sections/4_conclusion,
+    sections/A_appendixA,
+    sections/B_appendixB,
+    extras/acknowledge,
+    sections/summary_est,
+    extras/publications,
+    extras/cv_eng,
+    extras/cv_est,
+    extras/chapterpublications, % only for a monograph
 }
 
 \begin{document}
     \maketitle
     \thispagestyle{empty}
-    \include{sections/dedication}
+    \include{extras/dedication}
     \setcounter{page}{6}
-    \include{sections/abstract}
+    \include{sections/0-1_abstract}
     
     %
     \tableofcontents
     \listoffigures
     \listoftables
-    \include{sections/abbreviations}
-    \IfThesisTypeIsCollection{\include{sections/listofpublications}}{}
+    \include{extras/abbreviations}
+    \IfThesisTypeIsCollection{\include{extras/listofpublications}}{}
     
     %
-    \include{sections/preface}
-    \include{sections/introduction}
+    \include{sections/0-2_preface}
+    
+    \include{sections/1-introduction}
+    
+    \include{sections/2_background}
 
     % body
-    \include{sections/chapterI}
-    \include{sections/chapterII}
+    \include{sections/3-1_chapterI}
+    \include{sections/3-2_chapterII}
 
     % conclusion
-    \include{sections/conclusion}
+    \include{sections/4_conclusion}
 
     % bibliography
     % you can change the bibliography style from the phdstyle.sty file, bibliography section
@@ -114,17 +118,17 @@
 
     %
     \appendix
-    \include{sections/appendixA}
-    \include{sections/appendixB}
+    \include{sections/A_appendixA}
+    \include{sections/B_appendixB}
 
     %
     \setcounter{secnumdepth}{-1}
-    \include{sections/acknowledge}
-    \include{sections/sisukokkuvote} % summary in Estonian
-    \IfThesisTypeIsCollection{\include{sections/publications}}{}
+    \include{extras/acknowledge}
+    \include{sections/summary_est} % summary in Estonian
+    \IfThesisTypeIsCollection{\include{extras/publications}}{}
 
     % curriculum vitae
-    \include{sections/cv_eng} % English
-    \include{sections/cv_est} % Estonian
-    \IfThesisTypeIsCollection{}{\include{sections/chapterpublications}}
+    \include{extras/cv_eng} % English
+    \include{extras/cv_est} % Estonian
+    \IfThesisTypeIsCollection{}{\include{extras/chapterpublications}}
 \end{document}
